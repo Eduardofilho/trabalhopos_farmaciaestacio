@@ -1,0 +1,42 @@
+
+<div style="width: 400px; margin: 0px 400px;">
+<h1 style="margin: 0px 150px;">Login</h1>
+
+<div>
+    <label *ngIf="auth_status == 'OK'"><button type="button" class="btn" style="background: red;" (click)="signOut()">Sair</button>{{loggedInUser}}</label>
+</div>
+
+
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <div class="form-group row">
+            <label for="username" class="col-xs-2 col-form-label">usuario</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="text" [value]="username" (input)="username = $event.target.value" id="username">
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="form-group row">
+          <label for="password" class="col-xs-2 col-form-label">senha</label>
+          <div class="col-xs-10">
+            <input class="form-control"  type="password" [value]="password" (input)="password = $event.target.value" id="password">
+          </div>
+        </div>
+    </li>
+</ul>
+
+<div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+    
+    <button type="button" class="btn btn-success" (click)="useAnonymousAuth()">Entre</button>
+</div>
+
+
+<div class="alert alert-success" role="alert">
+  <label [class.alert]="is_auth_error" [class.alert-success]="is_auth_error">{{auth_status}}</label>
+</div>
+    
+
+<hr/>
+</div>

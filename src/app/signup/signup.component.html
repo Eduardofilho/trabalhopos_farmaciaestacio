@@ -1,0 +1,50 @@
+<div style="width: 600px; margin: 0px 400px;">
+<h1>Criar a Conta</h1>
+
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <div class="form-group row">
+            <label for="email" class="col-xs-2 col-form-label">Usuario</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="email" [value]="email" (input)="email = $event.target.value" id="email">
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="form-group row">
+            <label for="first-name" class="col-xs-2 col-form-label">Nome</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="text" [value]="firstName" (input)="firstName = $event.target.value" id="first-name">
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="form-group row">
+            <label for="last-name" class="col-xs-2 col-form-label">Sobrenome</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="text" [value]="lastName" (input)="lastName = $event.target.value" id="last-name">
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="form-group row">
+            <label for="newPassword" class="col-xs-2 col-form-label">Senha</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="password" [value]="signUpPassword" (input)="signUpPassword = $event.target.value" id="signUpPassword">
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="form-group row">
+            <label for="confirmPassword" class="col-xs-2 col-form-label">Senha Novamente</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="password" [value]="confirmPassword" (input)="confirmPassword = $event.target.value" id="confirmPassword">
+            </div>
+        </div>
+    </li>    
+    <li class="list-group-item">
+        <button type="button" class="btn btn-success" (click)="signUp()">Enviar</button>
+    </li>
+</ul>
+</div>

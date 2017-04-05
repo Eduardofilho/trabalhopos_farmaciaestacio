@@ -1,0 +1,71 @@
+<h1>Cadastro Produto</h1>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        Guarda e Buscar
+    </li>
+    <li class="list-group-item">
+        <div class="form-group row">
+            <label for="name" class="col-xs-2 col-form-label">codigo</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="text" placeholder="digite codigo"[value]="name" (input)="name = $event.target.value" id="name">
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="form-group row">
+            <label for="description" class="col-xs-2 col-form-label">Remedio</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="text" placeholder="digite o remedio" [value]="description" (input)="description = $event.target.value" id="description">
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="form-group row">
+            <label for="quantidade" class="col-xs-2 col-form-label">quantidade</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="text" placeholder="digite quantidade" [value]="quantidade" (input)="quantidade = $event.target.value" id="quantidade">
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="form-group row">
+            <label for="valor" class="col-xs-2 col-form-label">valor</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="text" placeholder="digite o valor" [value]="valor" (input)="valor = $event.target.value" id="valor">
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <button type="button" class="btn btn-success" (click)="postItem()">Enviar o Item</button>
+    </li>
+</ul>
+
+<hr/>
+
+<button  type="button" class="btn btn-success" (click)="getItems()">Pesquisar Items</button> 
+<br>
+
+<form class="form-inline">
+  <div class="form-group">
+    <label for="search-input">Procura</label>
+    <input type="text" class="form-control" id="search-input" placeholder="digite nome de remedio" [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}">
+  </div>
+  <button  type="submit" class="btn btn-success" (click)="filterItems()">Buscar</button>
+</form>
+
+<ul class="list-group">
+  <li class="list-group-item"  *ngFor="let item of items">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">{{item.name}}</h4>
+        <p class="card-text">{{item.description}}</p>
+        <p class="card-text">{{item.quantidade}}</p>
+        <p class="card-text">{{item.valor}}</p>
+        
+        <button class="btn btn-danger" md-button (click)="excluir(c)">Excluir</button>
+      </div>
+    </div>
+    
+  </li>
+</ul>
